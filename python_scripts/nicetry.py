@@ -12,6 +12,7 @@ df = pd.DataFrame(columns=columns)
 
 for i in range(2, len(rows)-2):
     tds = rows[i].find_all('td')
+    ths = rows[i].find('th')
 
     if len(tds) == 5:
         cases = tds[0].text.replace('\n', '')
@@ -19,7 +20,11 @@ for i in range(2, len(rows)-2):
         recov = tds[2].text.replace('\n', '')
         cases10k = tds[3].text.replace('\n', '')
         refer = tds[4].text.replace('\n', '')
+        county = ths.text.replace('\n', '')
 
-        values = [cases, deaths, recov, cases10k, refer]
-        print(values[:-1])    
+        values = [county, cases, deaths, recov, cases10k, refer]
     
+    df = df.append(pd.Series(values, index=columns), ignore_index=True)
+
+print(df)
+print(' ', len(rows) - 4, 'counties found')
