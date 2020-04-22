@@ -17,8 +17,8 @@ body {
     height: 50px;
     top: 50%;
     left: 50%;
-    margin-top: -50px;
-    margin-left: -100px;
+    margin-top: -25px;
+    margin-left: -50px;
     text-align: left-align;
     line-height: 2;
 }
@@ -27,7 +27,7 @@ body {
 
 .form__field {
     font-family: inherit;
-    width: 250%;
+    width: 100%;
     border: 0;
     border-bottom: 2px solid black;
     outline: 0;
