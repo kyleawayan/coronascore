@@ -1,0 +1,39 @@
+body {
+    font-family: system-ui;
+}
+
+.fullscreenDiv {
+    background-color: #e8e8e8;
+    width: 100%;
+    height: auto;
+    bottom: 0px;
+    top: 0px;
+    left: 0;
+    position: absolute;
+}
+.center {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+    text-align: left-align;
+    line-height: 2;
+}
+
+/* thank you Lucas Oliveira for the fancy input text box! https://codepen.io/lucasyem/pen/ZEEYKdj */
+
+.form__field {
+    font-family: inherit;
+    width: 250%;
+    border: 0;
+    border-bottom: 2px solid black;
+    outline: 0;
+    font-size: 1.3rem;
+    color: black;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
