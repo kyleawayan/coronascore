@@ -1,5 +1,5 @@
 # Call with file.py <State> <County>
-# if county is 'listall', temp file will show all counties
+# if county is 'listall', tmp file will show all counties
 
 import pandas as pd
 import os
@@ -9,11 +9,17 @@ import sys
 url = 'https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv'
 data_folder = Path('csvs')
 path = os.path.join(data_folder,'covid_19_counties.csv')
+file_path = Path('csvs/tmp.csv')
 
 df = pd.read_csv(url, error_bad_lines=False)
 
 df.to_csv(path, index=True)
 print('CSV Created!')
+
+try:
+    file_path.unlink()
+except OSError as e:
+    print("Error: %s : %s" % (file_path, e.strerror))
 
 ## Uncomment to 'incorporate' csv_read
 #
