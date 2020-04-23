@@ -1,3 +1,3 @@
-function functionName(){
-	alert('Hello world');
+function functionName(PLACE_ID){
+	alert(PLACE_ID)
 }
