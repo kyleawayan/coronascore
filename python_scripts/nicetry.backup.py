@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+
 url = "https://en.wikipedia.org/wiki/Template:2020_coronavirus_pandemic_by_California_county"
 page = requests.get(url)
 soup = BeautifulSoup(page.text, "lxml")
@@ -23,8 +24,14 @@ for i in range(2, len(rows)-2):
         county = ths.text.replace('\n', '')
 
         values = [county, cases, deaths, recov, cases10k, refer]
-    
+        
     df = df.append(pd.Series(values, index=columns), ignore_index=True)
+
+##df.drop(df.columns[[5]], axis=1, inplace=True)
+##        my_path = os.path.abspath(os.path.dirname(__file__))
+##        path = os.path.join(my_path, drop_map)
+##        repeat = await ctx.send(file=discord.File(path))
+df.to_csv('california.csv', index=False)
 
 print(df)
 print(' ', len(rows) - 4, 'counties found')

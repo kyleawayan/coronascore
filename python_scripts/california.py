@@ -1,17 +1,19 @@
 import requests
+from pathlib import Path
+import os
 from bs4 import BeautifulSoup
 import pandas as pd
-import os
+import datetime
 
 url = "https://en.wikipedia.org/wiki/Template:2020_coronavirus_pandemic_by_California_county"
 page = requests.get(url)
 soup = BeautifulSoup(page.text, "lxml")
+data_folder = Path('states')
 
 table = soup.find("table")
 rows = table.find_all('tr')
 columns = [v.text.replace('\n', '') for v in rows[0].find_all('th')]
 df = pd.DataFrame(columns=columns)
-
 
 for i in range(2, len(rows)-2):
     tds = rows[i].find_all('td')
@@ -29,11 +31,9 @@ for i in range(2, len(rows)-2):
         
     df = df.append(pd.Series(values, index=columns), ignore_index=True)
 
-df.drop(df.columns[[5]], axis=1, inplace=True)
-df.to_csv(r'C:\repos\wiki_api\nopeeking\python_scripts\ ' + 'cali_cases.csv', index=False)
-
-print('CSV Created')
+df.to_csv(os.path.join(data_folder,r'california.csv'), index=False)
 print(df)
-print(' ', len(rows) - 4, 'counties found')
-#print('enter county:')
-#inputString = input()
+print()
+print(len(rows) - 4, 'counties found')
+print('at', datetime.datetime.now())
+
