@@ -18,7 +18,7 @@
             corona<b>score</b>
                 <input id="locationTextField" class="form__field" placeholder="location" name="location" id='location' required />
                 <label for="locationTextField" class="form__label"></label> 
-                <input type="submit" value="Submit" style="border:none;" onclick="gec()">
+                <input type="submit" value="Submit" style="border:none;" onclick="getCounty()">
                 <input type="submit" value="test" style="border:none;" onclick="test()">
                 <script>
                     function init() {
@@ -27,9 +27,12 @@
 
                     }
                     google.maps.event.addDomListener(window, 'load', init);
+                    function getCounty() {
+                        gec();
+                    }
                 </script>
     <div class='score hidden'>
-        22
+        100
     </div>
         </div>
     </div>
