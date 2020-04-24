@@ -4,6 +4,8 @@
   "description": "show a universal score for how servere covid-19 is in a county",
   "main": "app.js",
   "dependencies": {
+    "countup.js": "^2.0.4",
+    "jquery": "^3.5.0",
     "python-shell": "^1.0.8",
     "system-font-css": "^2.0.2"
   },

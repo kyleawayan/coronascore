@@ -67,7 +67,10 @@ body {
 
 .score {
     text-align: center;
+    width: 250%;
     font-size: 200px;
+    display: flex;
+    justify-content: center;
 }
 
 .hidden {
