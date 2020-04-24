@@ -4,7 +4,9 @@
   "description": "show a universal score for how servere covid-19 is in a county",
   "main": "app.js",
   "dependencies": {
+    "@googlemaps/google-maps-services-js": "^2.5.5",
     "express": "^4.17.1",
+    "node-geocoder": "^3.27.0",
     "python-shell": "^1.0.8",
     "system-font-css": "^2.0.2"
   },
