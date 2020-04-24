@@ -4,6 +4,7 @@ function gec() {
   geocoder.geocode({'address': address}, function(results, status) {
     if (status === 'OK') {
       console.log(results)
+      element.classList.add("animation");
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
     }

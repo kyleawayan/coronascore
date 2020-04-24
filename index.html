@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>coronascore</title>
     <link rel ="stylesheet" type ="text/css" href ="index.css"/>
+    <script type="text/javascript" src="jquery-3.5.0.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Gbq8HPsUdZHbT9jCFY1hEp9KGxt9Li4&libraries=places"></script>
     <script type="text/javascript" src="map.js"></script>
+    <script type="text/javascript" src="test.js"></script>
 </head>
 <body>
     <div class='fullscreenDiv'>
@@ -15,6 +17,7 @@
                 <input id="locationTextField" class="form__field" placeholder="location" name="location" id='location' required />
                 <label for="locationTextField" class="form__label"></label> 
                 <input type="submit" value="Submit" style="border:none;" onclick="gec()">
+                <input type="submit" value="test" style="border:none;" onclick="test()">
                 <script>
                     function init() {
                         var input = document.getElementById('locationTextField');

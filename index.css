@@ -1,3 +1,8 @@
+@keyframes example {
+    from {top: 50%;}
+    to {top: 20%;}
+  }
+
 body {
     font-family: system-ui;
 }
@@ -27,6 +32,11 @@ body {
     margin-left: -100px;
     text-align: left-align;
     line-height: 2;
+
+.animation {
+    animation-name: example;
+    animation-duration: 1s;
+}
 }
 
 /* thank you Lucas Oliveira for the fancy input text box! https://codepen.io/lucasyem/pen/ZEEYKdj */
