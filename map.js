@@ -1,15 +1,11 @@
-const NodeGeocoder = require('node-geocoder');
- 
-const options = {
-  provider: 'google',
-  apiKey: 'AIzaSyD3Gbq8HPsUdZHbT9jCFY1hEp9KGxt9Li4',
-};
-
-const geocoder = NodeGeocoder(options);
- 
-(async () => {
-  const location = await geocoder.geocode('Benicia, CA');
-  
-  /** A list of matching locations is returned */
-  console.log(JSON.stringify(location));
-})();
+function gec() {
+  var geocoder = new google.maps.Geocoder();
+  var address = document.getElementsByName("location")[0].value;
+  geocoder.geocode({'address': address}, function(results, status) {
+    if (status === 'OK') {
+      console.log(results)
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
