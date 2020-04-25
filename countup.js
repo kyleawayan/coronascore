@@ -7,7 +7,7 @@ const options = {
     };
 
 function startcount() {
-    var countUp = new CountUp('score', 82, options)
+    var countUp = new CountUp('score', Math.floor(Math.random() * 1000), options)
     setTimeout(function() {
         countUp.start();
     }, 500);
