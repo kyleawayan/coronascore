@@ -23,13 +23,14 @@ export function startcount(SCORE) {
 export function info(cvData, C, D) {
     let center = document.querySelector('.center');
     let score = document.querySelector('.score');
-    center.classList.add('animation');
-    score2.classList.remove('hidden');
-    score2.classList.add('visible');
-    score3.classList.remove('hidden');
-    score3.classList.add('visible');
+    setTimeout(function() {
+        score2.classList.remove('hidden');
+        score2.classList.add('visible');
+        score3.classList.remove('hidden');
+        score3.classList.add('visible');
+    }, 1000);
     var countUp = new CountUp('info', C, options)
     setTimeout(function() {
         countUp.start();
-    }, 500);
+    }, 2000);
 }
