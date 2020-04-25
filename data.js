@@ -8,11 +8,21 @@ $(document).ready(function() {
 			var csvData = csvDataRev.reverse();
 			console.log(csvData);
 
+			function findDatebyPlace(county, state) {
+				return csvData.filter(data => data.county === county, data => data.state === state)[0].date
+			  }
+
 			function findCasesbyPlace(county, state) {
 				return csvData.filter(data => data.county === county, data => data.state === state)[0].cases
 			  }
+
+			function findDeathsbyPlace(county, state) {
+			return csvData.filter(data => data.county === county, data => data.state === state)[0].deaths
+			}
 			  
 			  console.log(
-				findCasesbyPlace("Solano", "Benicia")
+				findDatebyPlace("Solano", "Benicia"),
+				findCasesbyPlace("Solano", "Benicia"),
+				findDeathsbyPlace("Solano", "Benicia")
 			  )
 		}})})
