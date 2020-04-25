@@ -4,14 +4,15 @@ $(document).ready(function() {
 		dataType: "text",
 		success: function(csv)
 		{
-			const csvData = Papa.parse(csv, {header:true}).data
+			const csvDataRev = Papa.parse(csv, {header:true}).data
+			var csvData = csvDataRev.reverse();
 			console.log(csvData);
 
 			function findCasesbyPlace(county, state) {
-				return csvData.filter(data => data.county === county, data.state === state)[0].Cases
+				return csvData.filter(data => data.county === county, data => data.state === state)[0].cases
 			  }
 			  
 			  console.log(
-				findCasesbyPlace("Solano", "California")
+				findCasesbyPlace("Solano", "Benicia")
 			  )
 		}})})
