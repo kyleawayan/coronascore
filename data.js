@@ -26,10 +26,16 @@ function countyResults(COUNTY_NAME, STATE_NAME)	{
 				return csvData.filter(data => data.county === county, data => data.state === state)[0].deaths
 				}
 				  
-				  console.log(
-					findDatebyPlace(COUNTY_NAME, STATE_NAME),
-					findCasesbyPlace(COUNTY_NAME, STATE_NAME),
-					findDeathsbyPlace(COUNTY_NAME, STATE_NAME)
-				  )
+				  
+				var cvDate = findDatebyPlace(COUNTY_NAME, STATE_NAME)
+				var C = findCasesbyPlace(COUNTY_NAME, STATE_NAME)
+				var D = findDeathsbyPlace(COUNTY_NAME, STATE_NAME)
+				console.log(cvDate, C, D)
+
+				var coronascore = C * (D / C) + 10
+
+				console.log(coronascore)
+            
+				
 			}})})
 }
