@@ -34,7 +34,7 @@ export function info(cvData, C, D) {
     var countUp = new CountUp('info', C, options)
     setTimeout(function() {
         countUp.start();
-    }, 2000);
+    }, 1000);
 }
 
 export function deaths(cvData, C, D) {
@@ -49,5 +49,5 @@ export function deaths(cvData, C, D) {
     var countUp = new CountUp('deaths', D, options)
     setTimeout(function() {
         countUp.start();
-    }, 2000);
+    }, 1000);
 }
