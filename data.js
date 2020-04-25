@@ -7,7 +7,6 @@ function countyResults(COUNTY_NAME, STATE_NAME)	{
 			{
 				const csvDataRev = Papa.parse(csv, {header:true}).data
 				var csvData = csvDataRev.reverse();
-				console.log(csvData);
 	
 				function findDatebyPlace(county, state) {
 					return csvData.filter(data => data.county === county, data => data.state === state)[0].date
