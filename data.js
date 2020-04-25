@@ -1,4 +1,4 @@
-import { startcount } from './countup.js'
+import { startcount, info } from './countup.js'
 export function countyResults(COUNTY_NAME, STATE_NAME)	{
 	$(document).ready(function() {
 		$.ajax({
@@ -31,5 +31,6 @@ export function countyResults(COUNTY_NAME, STATE_NAME)	{
 
 				console.log(coronascore)
 				startcount(coronascore)
+				info(cvDate, C, D)
 			}})})
 }

@@ -73,6 +73,23 @@ body {
     justify-content: center;
 }
 
+.score2 {
+    text-align: center;
+    width: 250%;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    line-height: 1;
+}
+
+.score3 {
+    text-align: center;
+    width: 250%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
 .hidden {
     visibility: hidden;
 }
