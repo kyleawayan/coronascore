@@ -1,4 +1,4 @@
-function test(COUNTY_NAME) {
+function test(COUNTY_NAME, STATE_NAME) {
 	$(document).ready(function() {
 		$.ajax({
 			type: "GET",
@@ -27,5 +27,6 @@ function test(COUNTY_NAME) {
 		}
 		// alert(lines);
 	console.log(COUNTY_NAME)
+	console.log(STATE_NAME)
 	}
 }
