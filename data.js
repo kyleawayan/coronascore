@@ -13,6 +13,6 @@ $(document).ready(function() {
 			  }
 			  
 			  console.log(
-				findCasesbyPlace("Solano", "Benicia")
+				findCasesbyPlace("Contra Costa", "California")
 			  )
 		}})})
