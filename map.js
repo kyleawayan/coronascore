@@ -25,8 +25,9 @@ function gec() {
       score.classList.add('visible');
 
       console.log("county =" ,COUNTY_NAME, "/ state =" ,STATE_NAME);
+      countyResults(COUNTY_NAME, STATE_NAME);
       
-    } 
+    }
     else {
       alert('Geocode was not successful for the following reason: ' + status);
     }
