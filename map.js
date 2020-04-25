@@ -41,20 +41,25 @@ export function gec() {
         }
         else {
           var foundA = arrayRes.indexOf('["administrative_area_level_2","political"]},{"long_name"');
-          var countyName = (arrayRes[foundA-1].split(','))[0];
-
-          if (countyName.endsWith('County"') == true) {
-            var COUNTY_NAME = countyName.slice(1, -8)
-          }
-          else if (arrayRes.includes('["administrative_area_level_2","political"]},{"long_name"') == true) {
-            var COUNTY_NAME = countyName.slice(1, -1)
-          }
-          else {
+          if (foundA == -1) {
             alert('Please enter a more specific location!')
           }
+          else {
+            var countyName = (arrayRes[foundA-1].split(','))[0];
 
-          countyResults(COUNTY_NAME, STATE_NAME);
-          
+            if (countyName.endsWith('County"') == true) {
+              var COUNTY_NAME = countyName.slice(1, -8)
+            }
+            else if (arrayRes.includes('["administrative_area_level_2","political"]},{"long_name"') == true) {
+              var COUNTY_NAME = countyName.slice(1, -1)
+            }
+            else {
+              alert('Please enter a more specific location!')
+            }
+
+            countyResults(COUNTY_NAME, STATE_NAME);
+            
+              }
             }
         }
     }
