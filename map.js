@@ -16,9 +16,6 @@ export function gec() {
         console.log(results)
         if (arrayRes.includes('["administrative_area_level_2","political"]},{"long_name"') == false)  {
           COUNTY_NAME = 'New York City'
-          center.classList.add('animation');
-          score.classList.remove('hidden');
-          score.classList.add('visible');
           countyResults(COUNTY_NAME, STATE_NAME);
         }
         else  {
