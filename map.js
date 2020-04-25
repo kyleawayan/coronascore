@@ -19,14 +19,8 @@ function gec() {
       else {
         var COUNTY_NAME = countyName.slice(1, -1)
       }
-
-      center.classList.add('animation');
-      score.classList.remove('hidden');
-      score.classList.add('visible');
-
       console.log("county =" ,COUNTY_NAME, "/ state =" ,STATE_NAME);
       countyResults(COUNTY_NAME, STATE_NAME);
-      
     }
     else {
       alert('Geocode was not successful for the following reason: ' + status);
