@@ -1,3 +1,4 @@
+import { startcount } from './countup.js'
 function countyResults(COUNTY_NAME, STATE_NAME)	{
 	$(document).ready(function() {
 		$.ajax({
@@ -29,7 +30,6 @@ function countyResults(COUNTY_NAME, STATE_NAME)	{
 				var coronascore = C * (D / C) + 10
 
 				console.log(coronascore)
-            
-				
+				startcount(coronascore)
 			}})})
 }

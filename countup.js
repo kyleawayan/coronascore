@@ -6,7 +6,7 @@ const options = {
       separator: '',
     };
 
-function startcount() {
+export function startcount() {
     let center = document.querySelector('.center');
     let score = document.querySelector('.score');
     center.classList.add('animation');
