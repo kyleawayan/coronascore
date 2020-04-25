@@ -1,5 +1,5 @@
 import { startcount } from './countup.js'
-function countyResults(COUNTY_NAME, STATE_NAME)	{
+export function countyResults(COUNTY_NAME, STATE_NAME)	{
 	$(document).ready(function() {
 		$.ajax({
 			url: "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv",

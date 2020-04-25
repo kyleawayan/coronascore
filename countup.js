@@ -6,13 +6,13 @@ const options = {
       separator: '',
     };
 
-export function startcount() {
+export function startcount(SCORE) {
     let center = document.querySelector('.center');
     let score = document.querySelector('.score');
     center.classList.add('animation');
     score.classList.remove('hidden');
     score.classList.add('visible');
-    var countUp = new CountUp('score', Math.floor(Math.random() * 1000), options)
+    var countUp = new CountUp('score', SCORE, options)
     setTimeout(function() {
         countUp.start();
     }, 500);

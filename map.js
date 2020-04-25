@@ -1,3 +1,4 @@
+import { countyResults } from './data.js'
 document.getElementById("submit").addEventListener("click", gec)
 
 export function gec() {
@@ -9,7 +10,7 @@ export function gec() {
       var arrayRes = JSON.stringify((results[0])['address_components']).split(':');
       var foundB = arrayRes.indexOf('["administrative_area_level_1","political"]},{"long_name"');
       var stateName = (arrayRes[foundB-2].split(','))[0];
-      STATE_NAME = stateName.slice(1, -1);
+      var STATE_NAME = stateName.slice(1, -1);
 
       if (STATE_NAME == 'New York') {
         console.log(results)
