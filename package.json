@@ -1,10 +1,11 @@
 {
   "name": "coronascore",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "show a universal score for how servere covid-19 is in a county",
   "main": "app.js",
   "dependencies": {
     "countup.js": "^2.0.4",
+    "darkmode-js": "^1.5.5",
     "jquery": "^3.5.0",
     "papaparse": "^5.2.0",
     "python-shell": "^1.0.8",
@@ -17,10 +18,11 @@
     "type": "git",
     "url": "git+https://github.com/kyleawayan/coronascore.git"
   },
-  "author": "Kyle Awayan, Gabe Haarberg",
+  "author": "Kyle Awayan, Gabe Haarberg, Mateo Ignacio",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kyleawayan/coronascore/issues"
   },
-  "homepage": "https://github.com/kyleawayan/coronascore#readme"
+  "homepage": "https://github.com/kyleawayan/coronascore#readme",
+  "devDependencies": {}
 }
