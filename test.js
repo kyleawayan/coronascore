@@ -26,7 +26,7 @@ function test(COUNTY_NAME, STATE_NAME) {
 			}
 		}
 		// alert(lines);
-	console.log(COUNTY_NAME)
-	console.log(STATE_NAME)
+	var placeName = COUNTY_NAME + ',' + STATE_NAME;
+	console.log(placeName);
 	}
 }
