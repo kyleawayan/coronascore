@@ -1,8 +1,6 @@
 function gec() {
   var geocoder = new google.maps.Geocoder();
   var address = document.getElementsByName("location")[0].value;
-  let center = document.querySelector('.center');
-  let score = document.querySelector('.score');
   geocoder.geocode({'address': address}, function(results, status) {
     if (status === 'OK') {
       var arrayRes = JSON.stringify((results[0])['address_components']).split(':');
@@ -33,10 +31,6 @@ function gec() {
             COUNTY_NAME = countyName.slice(1, -8)
           }
 
-          center.classList.add('animation');
-          score.classList.remove('hidden');
-          score.classList.add('visible');
-
           countyResults(COUNTY_NAME, STATE_NAME)
         }
       }
@@ -50,10 +44,6 @@ function gec() {
         else {
           var COUNTY_NAME = countyName.slice(1, -1)
         }
-
-        center.classList.add('animation');
-        score.classList.remove('hidden');
-        score.classList.add('visible');
 
         countyResults(COUNTY_NAME, STATE_NAME);
         

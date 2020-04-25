@@ -94,11 +94,15 @@ body {
     }
   }
 
-  .footer {
-    position: fixed;
-    left: 0;
-    bottom: 15px;
-    width: 100%;
-    text-align: center;
+.footer {
+position: fixed;
+left: 0;
+bottom: 15px;
+width: 100%;
+text-align: center;
+color: lightgrey
+}
+
+a {
     color: lightgrey
-  }
+}
