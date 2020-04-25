@@ -22,11 +22,10 @@ function test(COUNTY_NAME, STATE_NAME) {
 					tarr.push(headers[j]+":"+data[j]);
 				}
                 lines.push(tarr);
-                
 			}
 		}
 		// alert(lines);
-	var placeName = COUNTY_NAME + ',' + STATE_NAME;
+	var placeName = '"county:' + COUNTY_NAME + '"' + ',' + '"state:' + STATE_NAME + '"';
 	console.log(placeName);
 	}
 }
