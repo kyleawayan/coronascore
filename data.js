@@ -5,6 +5,8 @@ function countyResults(COUNTY_NAME, STATE_NAME)	{
 			dataType: "text",
 			success: function(csv)
 			{
+				let center = document.querySelector('.center');
+				let score = document.querySelector('.score');
 				center.classList.add('animation');
 				score.classList.remove('hidden');
 				score.classList.add('visible');
