@@ -7,19 +7,16 @@ function gec() {
     if (status === 'OK') {
       var arrayRes = JSON.stringify((results[0])['address_components']).split(':');
       var foundB = arrayRes.indexOf('["administrative_area_level_1","political"]},{"long_name"');
-      console.log(arrayRes)
       var stateName = (arrayRes[foundB-2].split(','))[0];
       STATE_NAME = stateName.slice(1, -1);
 
       if (STATE_NAME == 'New York') {
-        console.log((results[0])['address_components'])
+        console.log(results)
         if (arrayRes.includes('["administrative_area_level_2","political"]},{"long_name"') == false)  {
           COUNTY_NAME = 'New York City'
           center.classList.add('animation');
           score.classList.remove('hidden');
           score.classList.add('visible');
-
-          console.log("county =" ,COUNTY_NAME, " state =" ,STATE_NAME);
           countyResults(COUNTY_NAME, STATE_NAME);
         }
         else  {
@@ -29,7 +26,7 @@ function gec() {
           if (countyName.slice(1, -1) == 'New York County' || countyName.slice(1, -1) == 'Bronx County'){
             COUNTY_NAME = 'New York City'
           }
-          else if (countyName.slice(1, -1) == 'Queens County')  {
+          else if (countyName.slice(1, -1) == 'Queens County' || countyName.slice(1, -1) == 'Kings County')  {
             COUNTY_NAME = 'New York City'
           }
           else {
@@ -40,7 +37,6 @@ function gec() {
           score.classList.remove('hidden');
           score.classList.add('visible');
 
-          console.log("county =" ,COUNTY_NAME, " state =" ,STATE_NAME);
           countyResults(COUNTY_NAME, STATE_NAME)
         }
       }
@@ -59,11 +55,11 @@ function gec() {
         score.classList.remove('hidden');
         score.classList.add('visible');
 
-        console.log("county =" ,COUNTY_NAME, " state =" ,STATE_NAME);
         countyResults(COUNTY_NAME, STATE_NAME);
         
           }
       }
+      
       
     else {
       alert('Geocode was not successful for the following reason: ' + status);
