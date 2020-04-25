@@ -4,3 +4,6 @@ node_modules
 .vscode
 csvs
 python_scripts
+.ebextensions
+.npmrc
+*.zip
