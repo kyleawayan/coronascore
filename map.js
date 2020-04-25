@@ -2,7 +2,8 @@ document.getElementById("submit").addEventListener("click", gec)
 
 export function gec() {
   var geocoder = new google.maps.Geocoder();
-  var address = document.getElementById("location")[0].value;
+  var address = document.getElementsByName("location")[0].value;
+  console.log(address);
   geocoder.geocode({'address': address}, function(results, status) {
     if (status === 'OK') {
       var arrayRes = JSON.stringify((results[0])['address_components']).split(':');
