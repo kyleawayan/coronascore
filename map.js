@@ -6,7 +6,7 @@ function gec() {
   geocoder.geocode({'address': address}, function(results, status) {
     if (status === 'OK') {
       var arrayRes = JSON.stringify((results[0])['address_components']).split(':');
-      console.log(JSON.stringify(results[0]).split(':'));
+      // console.log(JSON.stringify(results[0]).split(':'));
       var foundA = arrayRes.indexOf('["administrative_area_level_2","political"]},{"long_name"');
       var countyName = (arrayRes[foundA-1].split(','))[0];
 
@@ -15,20 +15,20 @@ function gec() {
       STATE_NAME = stateName.slice(1, -1);
       if (countyName.endsWith('County"') == true) {
         var COUNTY_NAME = countyName.slice(1, -8)
-        test(COUNTY_NAME, STATE_NAME)
       }
       else {
         var COUNTY_NAME = countyName.slice(1, -1)
-        test(COUNTY_NAME, STATE_NAME)
       }
 
       center.classList.add('animation');
       score.classList.remove('hidden');
       score.classList.add('visible');
+
+      console.log("county =" ,COUNTY_NAME, "/ state =" ,STATE_NAME);
+      
     } 
     else {
       alert('Geocode was not successful for the following reason: ' + status);
     }
   })
-
 }

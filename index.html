@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>coronascore</title>
     <link rel ="stylesheet" type ="text/css" href ="index.css"/>
-    <script type="text/javascript" src="./node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="./node_modules/papaparse/papaparse.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Gbq8HPsUdZHbT9jCFY1hEp9KGxt9Li4&libraries=places"></script>
     <script type="text/javascript" src="map.js"></script>
-    <script type="text/javascript" src="test.js"></script>
+    <script type="text/javascript" src="data.js"></script>
     <script src="./node_modules/countup.js/dist/countUp.min.js" type="module"></script>
     <script src="./countup.js" type="module"></script>
 </head>
@@ -18,8 +19,7 @@
             corona<b>score</b>
                 <input id="locationTextField" class="form__field" placeholder="location" name="location" id='location' required />
                 <label for="locationTextField" class="form__label"></label> 
-                <input type="submit" value="Submit" style="border:none;" onclick="getCounty()">
-                <input type="submit" value="test" style="border:none;" onclick="test()">
+                <input type="submit" value="Submit" id="submit" style="border:none;" onclick="getCounty()">
                 <script>
                     function init() {
                         var input = document.getElementById('locationTextField');
@@ -31,8 +31,7 @@
                         gec();
                     }
                 </script>
-    <div class='score hidden'>
-        100
+    <div class='score hidden' id='score'>
     </div>
         </div>
     </div>

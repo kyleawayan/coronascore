@@ -1,6 +1,14 @@
 import { CountUp } from './node_modules/countup.js/dist/countUp.min.js';
 
-window.onload = function() {
-    var countUp = new CountUp('score', 2000);
-    countUp.start();
+document.getElementById("submit").addEventListener("click", startcount)
+
+const options = {
+      separator: '',
+    };
+
+function startcount() {
+    var countUp = new CountUp('score', 82, options)
+    setTimeout(function() {
+        countUp.start();
+    }, 500);
 }
