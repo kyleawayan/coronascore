@@ -3,6 +3,8 @@ let center = document.querySelector('.center');
 let score = document.querySelector('.score');
 let score2 = document.querySelector('.score2');
 let score3 = document.querySelector('.score3');
+let score4 = document.querySelector('.score4');
+let score5 = document.querySelector('.score5');
 
 const options = {
       separator: '',
@@ -30,6 +32,21 @@ export function info(cvData, C, D) {
         score3.classList.add('visible');
     }, 1000);
     var countUp = new CountUp('info', C, options)
+    setTimeout(function() {
+        countUp.start();
+    }, 2000);
+}
+
+export function deaths(cvData, C, D) {
+    let center = document.querySelector('.center');
+    let score = document.querySelector('.score');
+    setTimeout(function() {
+        score4.classList.remove('hidden');
+        score4.classList.add('visible');
+        score5.classList.remove('hidden');
+        score5.classList.add('visible');
+    }, 1000);
+    var countUp = new CountUp('deaths', D, options)
     setTimeout(function() {
         countUp.start();
     }, 2000);
