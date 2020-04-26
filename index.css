@@ -59,8 +59,9 @@ body {
 
 @keyframes example {
     from {top: 50%;}
-    to {top: 28%;}
+    to {top: 26%;}
   }
+
 
 /* thank you Lucas Oliveira for the fancy input text box! https://codepen.io/lucasyem/pen/ZEEYKdj */
 
@@ -143,13 +144,13 @@ body {
   }
 
 .footer {
-position: fixed;
+position: absolute;
 left: 0;
-bottom: 15px;
+bottom: 2%;
 width: 100%;
 text-align: center;
 color: lightgrey;
-font-size: 15px
+font-size: 10px
 }
 
 a {

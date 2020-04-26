@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>coronascore</title>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel ="stylesheet" type ="text/css" href ="index.css"/>
@@ -28,14 +28,16 @@
             <script>function wrong() {
                 document.getElementById("cs").innerHTML = "<div class='nothing'>corona<b>score.</b> please enter a more specific location! only u.s. cities are supported!.</div>"
                 let nothing = document.querySelector('.nothing');
-                if (darkmode.isActivated() == true)
+                if (window.dark == 1) {
                     nothing.classList.add('shakeDark');
+                }
                 else {
                     nothing.classList.add('shakeLight');
                 }
                 setTimeout(function() {
-                    if (darkmode.isActivated() == true)
+                    if (window.dark == 2) {
                     nothing.classList.remove('shakeDark');
+                    }
                     else {
                     nothing.classList.remove('shakeLight');
                 }
@@ -52,6 +54,12 @@
                         var autocomplete = new google.maps.places.Autocomplete(input);
                         autocomplete.setComponentRestrictions(
                              {'country': ['us']});
+                             if (darkmode.isActivated() == true) {
+                window.dark = 1;
+            }
+            else {
+                window.dark = 2;
+            }
                     }
                     google.maps.event.addDomListener(window, 'load', init);
 
@@ -67,25 +75,31 @@
         </div>
     </div>
     <div class="footer">
-        data provided by the <a href="https://github.com/nytimes/covid-19-data">nytimes</a>.
+        data provided by the <a href="https://github.com/nytimes/covid-19-data">nytimes</a>. <a href="no-javascript.html" id="toggleDark">light/dark</a>
     </div>
 <script>
 var options = {
-  bottom: '64px', // default: '32px'
-  right: 'unset', // default: '32px'
-  left: '32px', // default: 'unset'
-  time: '0.5s', // default: '0.3s'
-  mixColor: '#fff', // default: '#fff'
-  backgroundColor: '#fff',  // default: '#fff'
-  buttonColorDark: '#100f2c',  // default: '#100f2c'
-  buttonColorLight: '#fff', // default: '#fff'
-  saveInCookies: false, // default: true,
-  label: '🌓', // default: ''
-  autoMatchOsTheme: true // default: true
+  mixColor: '#fff',
+  backgroundColor: '#fff',
+  saveInCookies: false,
+  autoMatchOsTheme: true
 }
-
 const darkmode = new Darkmode(options);
-darkmode.toggle();
-</script> 
+</script>
+<script>
+    var toggle = document.getElementById('toggleDark');
+    toggle.onclick = toggleDark;
+    function toggleDark() {
+    darkmode.toggle();
+    if (darkmode.isActivated() == true) {
+                    window.dark = 1;
+                }
+                else {
+                    window.dark = 2;
+                }
+  return false;
+}
+</script>
+
 </body>
 </html>

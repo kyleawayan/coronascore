@@ -12,7 +12,7 @@ var bar = new ProgressBar.Circle('#loading', {
 export function loadingdone(coronascore)  {
     bar.animate(1);
     var path = document.querySelector('#loading > svg > path:last-child');
-    if (darkmode.isActivated() == true)
+    if (window.dark == 1)
         if (coronascore < 100)  {
             path.setAttribute("stroke", "#b344e8");
         }
