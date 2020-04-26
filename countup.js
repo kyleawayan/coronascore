@@ -11,6 +11,7 @@ const options = {
     };
 
 export function startcount(SCORE) {
+    fix()
     let center = document.querySelector('.center');
     let score = document.querySelector('.score');
     center.classList.add('animation');

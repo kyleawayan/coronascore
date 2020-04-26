@@ -154,3 +154,14 @@ color: lightgrey
 a {
     color: lightgrey
 }
+
+@keyframes shake {
+    0% { transform: translate(0px, 0px); }
+    30% { transform: translate(-5px, 0px); color: red }
+    70% { transform: translate(5px, 0px); color: red }
+    100% { transform: translate(0px, 0px); color: black }
+  }
+
+.shake {
+    animation: shake 0.3s;
+}

@@ -37,7 +37,6 @@ export function gec() {
             }
 
             countyResults(COUNTY_NAME, STATE_NAME)
-            fix()
           }
         }
         else {
