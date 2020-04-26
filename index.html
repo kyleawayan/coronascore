@@ -10,7 +10,7 @@
     <script type="text/javascript" src="./node_modules/papaparse/papaparse.min.js"></script>
     <script type="text/javascript" src="./node_modules/underscore/underscore-min.js"></script>
     <script type="text/javascript" src="./node_modules/darkmode-js/lib/darkmode-js.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_X4Vu2trH2lA7XcAH90RvqFvkij-Okjg&libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=[YOUR_API_KEY]&libraries=places"></script>
     <script type="text/javascript" src="./node_modules/jq-ajax-progress/src/jq-ajax-progress.min.js"></script>
     <script src="map.js" type="module"></script>
     <script src="data.js" type="module"></script>
@@ -18,6 +18,23 @@
     <script src="./node_modules/countup.js/dist/countUp.min.js" type="module"></script>
     <script src="./countup.js" type="module"></script>
     <script type="text/javascript" src="./node_modules/progressbar.js/dist/progressbar.min.js"></script>
+    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
     <div class='fullscreenDiv'>
@@ -55,11 +72,11 @@
                         autocomplete.setComponentRestrictions(
                              {'country': ['us']});
                              if (darkmode.isActivated() == true) {
-                window.dark = 1;
-            }
-            else {
-                window.dark = 2;
-            }
+                                window.dark = 1;
+                            }
+                            else {
+                                window.dark = 2;
+                            }
                     }
                     google.maps.event.addDomListener(window, 'load', init);
 
@@ -67,6 +84,19 @@
                         if (event.keyCode === 13) { 
                             $("#submit").click(); 
                         } 
+
+                        var hideKeyboard = function() {
+                        document.activeElement.blur();
+                        var inputs = document.querySelectorAll('input');
+                        for(var i=0; i < inputs.length; i++) {
+                        inputs[i].blur();
+                        }
+                        };
+                        $location_input = $("#locationTextField");
+                        autocomplete = new google.maps.places.Autocomplete($location_input.get(0), options);
+                        google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                            $("#submit").click();
+                    });
                     }); 
                 </script>
                 <div class='score hidden' id='score'></div>
@@ -75,7 +105,7 @@
         </div>
     </div>
     <div class="footer">
-        <a href=https://github.com/kyleawayan/coronascore target="_blank">github</a>. provided by the <a href="https://github.com/nytimes/covid-19-data">nytimes</a>. <a href="no-javascript.html" id="toggleDark">light/dark</a>
+        <a href=https://github.com/kyleawayan/coronascore target="_blank">github</a>. provided by the <a href="https://github.com/nytimes/covid-19-data" target="_blank">nytimes</a>. <a href="no-javascript.html" id="toggleDark">light/dark</a>
     </div>
 <script>
 var options = {
