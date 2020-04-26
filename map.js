@@ -10,7 +10,7 @@ export function gec() {
       var arrayRes = JSON.stringify((results[0])['address_components']).split(':');
       var foundB = arrayRes.indexOf('["administrative_area_level_1","political"]},{"long_name"');
       if (foundB == -1) {
-        alert('Please enter a more specific location!')
+        wrong()
       }
       else  {
         var stateName = (arrayRes[foundB-2].split(','))[0];
@@ -37,12 +37,13 @@ export function gec() {
             }
 
             countyResults(COUNTY_NAME, STATE_NAME)
+            fix()
           }
         }
         else {
           var foundA = arrayRes.indexOf('["administrative_area_level_2","political"]},{"long_name"');
           if (foundA == -1) {
-            alert('Please enter a more specific location!')
+            wrong()
           }
           else {
             var countyName = (arrayRes[foundA-1].split(','))[0];
@@ -54,7 +55,7 @@ export function gec() {
               var COUNTY_NAME = countyName.slice(1, -1)
             }
             else {
-              alert('Please enter a more specific location!')
+              wrong()
             }
 
             countyResults(COUNTY_NAME, STATE_NAME);
@@ -65,7 +66,7 @@ export function gec() {
     }
       
     else {
-      alert('Geocode was not successful for the following reason: ' + status);
+      wrong()
     }
   })
 }

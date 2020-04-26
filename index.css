@@ -28,6 +28,18 @@ body {
     line-height: 2;
 }
 
+.center2 {
+    position: absolute;
+    width: 250%;
+    height: 50px;
+    top: -60%;
+    left: 99%;
+    margin-top: -50px;
+    margin-left: -100px;
+    text-align: left-align;
+    line-height: 1.5;
+}
+
 .centerwoani {
     position: absolute;
     width: 100px;

@@ -8,7 +8,7 @@
     <link rel ="stylesheet" type ="text/css" href ="index.css"/>
     <script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="./node_modules/papaparse/papaparse.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWqPwJBmUVjGatYFB6LMtCqCmfDD95jZA&libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Gbq8HPsUdZHbT9jCFY1hEp9KGxt9Li4&libraries=places"></script>
     <script src="map.js" type="module"></script>
     <script src="data.js" type="module"></script>
     <script src="./node_modules/countup.js/dist/countUp.min.js" type="module"></script>
@@ -17,9 +17,13 @@
 <body>
     <div class='fullscreenDiv'>
         <div class="center">
-            corona<b>score</b>
-                <input id="locationTextField" class="form__field" placeholder="location" name="location" id='location' required />
-                <label for="locationTextField" class="form__label"></label> 
+            <div class="center2">
+            <div id='cs'>corona<b>score</b>. this tool will give you a universal score to compare how bad covid-19 is in an area.</div>
+        </div>
+            <script>function wrong() {document.getElementById("cs").innerHTML = "corona<b>score</b>. please enter a more specific location! try entering a city, u.s. is only supported."}</script>
+            <script>function fix() {document.getElementById("cs").innerHTML = "corona<b>score</b>. this tool will give you a universal score to compare how bad covid-19 is in an area."}</script>
+                <input id="locationTextField" onfocus="this.value=''" class="form__field" placeholder="location" name="location" id='location' required />
+                <label for="locationTextField" class="form__label"></label>
                 <input type="submit" value="Submit" id="submit" style="border:none;">
                 <script>
                     function init() {
