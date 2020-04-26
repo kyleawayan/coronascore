@@ -59,7 +59,7 @@ body {
 
 @keyframes example {
     from {top: 50%;}
-    to {top: 30%;}
+    to {top: 28%;}
   }
 
 /* thank you Lucas Oliveira for the fancy input text box! https://codepen.io/lucasyem/pen/ZEEYKdj */
@@ -148,7 +148,8 @@ left: 0;
 bottom: 15px;
 width: 100%;
 text-align: center;
-color: lightgrey
+color: lightgrey;
+font-size: 15px
 }
 
 a {
