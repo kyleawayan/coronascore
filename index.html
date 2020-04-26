@@ -8,11 +8,15 @@
     <link rel ="stylesheet" type ="text/css" href ="index.css"/>
     <script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="./node_modules/papaparse/papaparse.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Gbq8HPsUdZHbT9jCFY1hEp9KGxt9Li4&libraries=places"></script>
+    <script type="text/javascript" src="./node_modules/underscore/underscore-min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_X4Vu2trH2lA7XcAH90RvqFvkij-Okjg&libraries=places"></script>
+    <script type="text/javascript" src="./node_modules/jq-ajax-progress/src/jq-ajax-progress.min.js"></script>
     <script src="map.js" type="module"></script>
     <script src="data.js" type="module"></script>
+    <script src="loading.js" type="module"></script>
     <script src="./node_modules/countup.js/dist/countUp.min.js" type="module"></script>
     <script src="./countup.js" type="module"></script>
+    <script type="text/javascript" src="./node_modules/progressbar.js/dist/progressbar.min.js"></script>
 </head>
 <body>
     <div class='fullscreenDiv'>
@@ -32,6 +36,7 @@
                 <input id="locationTextField" onfocus="this.value=''" class="form__field" placeholder="city" name="location" id='location' required />
                 <label for="locationTextField" class="form__label"></label>
                 <input type="submit" value="Submit" id="submit" style="border:none;">
+                <div id="loading"></div>
                 <script>
                     function init() {
                         var input = document.getElementById('locationTextField');

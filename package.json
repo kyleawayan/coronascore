@@ -6,10 +6,13 @@
   "dependencies": {
     "countup.js": "^2.0.4",
     "darkmode-js": "^1.5.5",
+    "jq-ajax-progress": "^1.0.0",
     "jquery": "^3.5.0",
     "papaparse": "^5.2.0",
+    "progressbar.js": "^1.1.0",
     "python-shell": "^1.0.8",
-    "system-font-css": "^2.0.2"
+    "system-font-css": "^2.0.2",
+    "underscore": "^1.10.2"
   },
   "scripts": {
     "start": "node app.js"

@@ -165,3 +165,9 @@ a {
 .shake {
     animation: shake 0.3s;
 }
+
+#loading {
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+  }
