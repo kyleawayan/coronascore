@@ -109,7 +109,7 @@
         </div>
     </div>
     <div class="footer">
-        <a href="https://github.com/kyleawayan/coronascore" target="_blank">github</a>. data provided by the <a href="https://github.com/nytimes/covid-19-data" target="_blank">nytimes</a>. <a href="no-javascript.html" id="toggleDark">light/dark</a>
+        <a href="https://github.com/kyleawayan/coronascore" target="_blank">github</a>. data provided by the <a href="https://github.com/nytimes/covid-19-data" target="_blank">nytimes</a>.
     </div>
 <script>
 var options = {
@@ -120,20 +120,7 @@ var options = {
 }
 const darkmode = new Darkmode(options);
 </script>
-<script>
-    var toggle = document.getElementById('toggleDark');
-    toggle.onclick = toggleDark;
-    function toggleDark() {
-    darkmode.toggle();
-    if (darkmode.isActivated() == true) {
-                    window.dark = 1;
-                }
-                else {
-                    window.dark = 2;
-                }
-  return false;
-}
-</script>
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-67826928-7"></script>
 <script>
