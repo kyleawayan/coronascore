@@ -171,3 +171,7 @@ a {
     margin: 50px 70% 0px;
     width: 100px;
   }
+
+.nothing{
+    outline: 0
+}
