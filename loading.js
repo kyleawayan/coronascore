@@ -12,13 +12,25 @@ var bar = new ProgressBar.Circle('#loading', {
 export function loadingdone(coronascore)  {
     bar.animate(1);
     var path = document.querySelector('#loading > svg > path:last-child');
-    if (coronascore < 100)  {
-        path.setAttribute("stroke", "#4CBB17");
-    }
-    else if (coronascore < 500) {
-        path.setAttribute("stroke", "#FF7800");
-    }
+    if (darkmode.isActivated() == true)
+        if (coronascore < 100)  {
+            path.setAttribute("stroke", "#b344e8");
+        }
+        else if (coronascore < 500) {
+            path.setAttribute("stroke", "#0087ff");
+        }
+        else {
+            path.setAttribute("stroke", "#19ffff");
+        }
     else {
-        path.setAttribute("stroke", "#E60000");
+        if (coronascore < 100)  {
+            path.setAttribute("stroke", "#4CBB17");
+        }
+        else if (coronascore < 500) {
+            path.setAttribute("stroke", "#FF7800");
+        }
+        else {
+            path.setAttribute("stroke", "#E60000");
+        }
     }
 }
