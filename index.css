@@ -156,15 +156,26 @@ a {
     color: lightgrey
 }
 
-@keyframes shake {
+@keyframes shakeLight {
     0% { transform: translate(0px, 0px); }
-    30% { transform: translate(-5px, 0px); color: red }
-    70% { transform: translate(5px, 0px); color: red }
+    30% { transform: translate(-5px, 0px); color: #E60000 }
+    70% { transform: translate(5px, 0px); color: #E60000 }
     100% { transform: translate(0px, 0px); color: black }
   }
 
-.shake {
-    animation: shake 0.3s;
+    @keyframes shakeDark {
+    0% { transform: translate(0px, 0px); }
+    30% { transform: translate(-5px, 0px); color: #19ffff }
+    70% { transform: translate(5px, 0px); color: #19ffff }
+    100% { transform: translate(0px, 0px); color: black }
+}
+
+.shakeLight {
+    animation: shakeLight 0.3s;
+}
+
+.shakeDark {
+    animation: shakeDark 0.3s;
 }
 
 #loading {
@@ -175,3 +186,7 @@ a {
 .nothing{
     outline: 0
 }
+
+.darkmode-layer, .darkmode-toggle {
+    z-index: 500;
+  }

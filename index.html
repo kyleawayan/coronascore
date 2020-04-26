@@ -9,6 +9,7 @@
     <script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="./node_modules/papaparse/papaparse.min.js"></script>
     <script type="text/javascript" src="./node_modules/underscore/underscore-min.js"></script>
+    <script type="text/javascript" src="./node_modules/darkmode-js/lib/darkmode-js.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_X4Vu2trH2lA7XcAH90RvqFvkij-Okjg&libraries=places"></script>
     <script type="text/javascript" src="./node_modules/jq-ajax-progress/src/jq-ajax-progress.min.js"></script>
     <script src="map.js" type="module"></script>
@@ -27,9 +28,17 @@
             <script>function wrong() {
                 document.getElementById("cs").innerHTML = "<div class='nothing'>corona<b>score.</b> please enter a more specific location! try entering a city, u.s. is only supported.</div>"
                 let nothing = document.querySelector('.nothing');
-                nothing.classList.add('shake');
+                if (darkmode.isActivated() == true)
+                    nothing.classList.add('shakeDark');
+                else {
+                    nothing.classList.add('shakeLight');
+                }
                 setTimeout(function() {
-                    nothing.classList.remove('shake');;
+                    if (darkmode.isActivated() == true)
+                    nothing.classList.remove('shakeDark');
+                    else {
+                    nothing.classList.remove('shakeLight');
+                }
                 }, 500);
                 }</script>
             <script>function fix() {document.getElementById("cs").innerHTML = "<div class='nothing'>corona<b>score.</b> this tool will give you a universal score to compare how bad covid-19 is in an area.</div>"}</script>
@@ -60,5 +69,23 @@
     <div class="footer">
         data provided by the <a href="https://github.com/nytimes/covid-19-data">nytimes</a>.
     </div>
+<script>
+var options = {
+  bottom: '64px', // default: '32px'
+  right: 'unset', // default: '32px'
+  left: '32px', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: false, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+
+const darkmode = new Darkmode(options);
+darkmode.toggle();
+</script> 
 </body>
 </html>
