@@ -22,17 +22,17 @@
     <div class='fullscreenDiv'>
         <div class="center">
             <div class="center2">
-            <div id='cs'>corona<b>score.</b> this tool will give you a universal score to compare how bad covid-19 is in an area.</div>
+            <div id='cs'><div class='nothing'>corona<b>score.</b> this tool will give you a universal score to compare how bad covid-19 is in an area.</div></div>
         </div>
             <script>function wrong() {
-                document.getElementById("cs").innerHTML = "corona<b>score.</b> please enter a more specific location! try entering a city, u.s. is only supported."
-                let fullscreenDiv = document.querySelector('.fullscreenDiv');
-                fullscreenDiv.classList.add('shake');
+                document.getElementById("cs").innerHTML = "<div class='nothing'>corona<b>score.</b> please enter a more specific location! try entering a city, u.s. is only supported.</div>"
+                let nothing = document.querySelector('.nothing');
+                nothing.classList.add('shake');
                 setTimeout(function() {
-                    fullscreenDiv.classList.remove('shake');;
+                    nothing.classList.remove('shake');;
                 }, 500);
                 }</script>
-            <script>function fix() {document.getElementById("cs").innerHTML = "corona<b>score.</b> this tool will give you a universal score to compare how bad covid-19 is in an area."}</script>
+            <script>function fix() {document.getElementById("cs").innerHTML = "<div class='nothing'>corona<b>score.</b> this tool will give you a universal score to compare how bad covid-19 is in an area.</div>"}</script>
                 <input id="locationTextField" onfocus="this.value=''" class="form__field" placeholder="city" name="location" id='location' required />
                 <label for="locationTextField" class="form__label"></label>
                 <input type="submit" value="Submit" id="submit" style="border:none;">
