@@ -83,11 +83,14 @@
                     $("#locationTextField").keypress(function(event) { 
                         if (event.keyCode === 13) { 
                             $("#submit").click(); 
+                            document.activeElement.blur();
+                            var inputs = document.querySelectorAll('input');
+                            for(var i=0; i < inputs.length; i++) {
                             var hideKeyboard = function() {
                             inputs[i].blur();
                         }
                         }
-
+                    }
                         var hideKeyboard = function() {
                         document.activeElement.blur();
                         var inputs = document.querySelectorAll('input');
