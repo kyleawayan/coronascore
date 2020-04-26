@@ -1,6 +1,6 @@
 {
   "name": "coronascore",
-  "version": "2.1.1",
+  "version": "2.1.3",
   "description": "show a universal score for how servere covid-19 is in a county",
   "main": "app.js",
   "dependencies": {
