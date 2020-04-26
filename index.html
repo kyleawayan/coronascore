@@ -45,6 +45,12 @@
                              {'country': ['us']});
                     }
                     google.maps.event.addDomListener(window, 'load', init);
+
+                    $("#locationTextField").keypress(function(event) { 
+                        if (event.keyCode === 13) { 
+                            $("#submit").click(); 
+                        } 
+                    }); 
                 </script>
                 <div class='score hidden' id='score'></div>
                 <div class='score2 hidden' id='info'></div><div class='score3 hidden'>cases</div>

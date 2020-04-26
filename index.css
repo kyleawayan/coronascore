@@ -59,7 +59,7 @@ body {
 
 @keyframes example {
     from {top: 50%;}
-    to {top: 20%;}
+    to {top: 30%;}
   }
 
 /* thank you Lucas Oliveira for the fancy input text box! https://codepen.io/lucasyem/pen/ZEEYKdj */
@@ -80,7 +80,7 @@ body {
 .score {
     text-align: center;
     width: 250%;
-    font-size: 150px;
+    font-size: 120px;
     display: flex;
     justify-content: center;
     line-height: 1.3;
@@ -167,7 +167,6 @@ a {
 }
 
 #loading {
-    margin: 20px;
-    width: 200px;
-    height: 200px;
+    margin: 50px 70% 0px;
+    width: 100px;
   }

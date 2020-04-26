@@ -1,5 +1,5 @@
 import { startcount, info, deaths } from './countup.js'
-import { startLoad } from './loading.js'
+import { startLoad, loadingdone } from './loading.js'
 
 export function countyResults(COUNTY_NAME, STATE_NAME)	{
 	$(document).ready(function() {
@@ -18,7 +18,6 @@ export function countyResults(COUNTY_NAME, STATE_NAME)	{
 				var size = (weirdsize/0.225978101)
 				var done = _.property('loaded')(e);
 				var percentDone = done/size
-				console.log(percentDone)
 				startLoad(percentDone)
 			},
 			success: function(csv)
@@ -44,10 +43,11 @@ export function countyResults(COUNTY_NAME, STATE_NAME)	{
 				var D = findDeathsbyPlace(COUNTY_NAME, STATE_NAME)
 				console.log(cvDate, C, D)
 
-				var coronascore = C * (D / C) + 10
+				var coronascore = Math.round(C * ((D+2)/(2*C)))
 
 				console.log(coronascore)
 				startcount(coronascore)
+				loadingdone(coronascore)
 				info(cvDate, C, D)
 				deaths(cvDate, C, D)
 			}})})

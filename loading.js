@@ -1,4 +1,3 @@
-export function startLoad(percentDone) {
 var bar = new ProgressBar.Circle('#loading', {
     strokeWidth: 6,
     easing: 'easeInOut',
@@ -6,6 +5,20 @@ var bar = new ProgressBar.Circle('#loading', {
     color: 'black',
     svgStyle: null
   });
-  
-  bar.animate(percentDone);  // Number from 0.0 to 1.0
+  export function startLoad(percentDone) {
+  bar.animate(percentDone*38);  // Number from 0.0 to 1.0
+}
+
+export function loadingdone(coronascore)  {
+    bar.animate(1);
+    var path = document.querySelector('#loading > svg > path:last-child');
+    if (coronascore < 100)  {
+        path.setAttribute("stroke", "#4CBB17");
+    }
+    else if (coronascore < 500) {
+        path.setAttribute("stroke", "#FF7800");
+    }
+    else {
+        path.setAttribute("stroke", "#E60000");
+    }
 }
