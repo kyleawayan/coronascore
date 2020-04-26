@@ -83,7 +83,10 @@
                     $("#locationTextField").keypress(function(event) { 
                         if (event.keyCode === 13) { 
                             $("#submit").click(); 
-                        } 
+                            var hideKeyboard = function() {
+                            inputs[i].blur();
+                        }
+                        }
 
                         var hideKeyboard = function() {
                         document.activeElement.blur();
@@ -105,7 +108,7 @@
         </div>
     </div>
     <div class="footer">
-        <a href=https://github.com/kyleawayan/coronascore target="_blank">github</a>. provided by the <a href="https://github.com/nytimes/covid-19-data" target="_blank">nytimes</a>. <a href="no-javascript.html" id="toggleDark">light/dark</a>
+        <a href="https://github.com/kyleawayan/coronascore" target="_blank">github</a>. data provided by the <a href="https://github.com/nytimes/covid-19-data" target="_blank">nytimes</a>. <a href="no-javascript.html" id="toggleDark">light/dark</a>
     </div>
 <script>
 var options = {
