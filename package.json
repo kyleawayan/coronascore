@@ -6,11 +6,13 @@
   "dependencies": {
     "countup.js": "^2.0.4",
     "darkmode-js": "^1.5.5",
+    "fs": "0.0.1-security",
     "jq-ajax-progress": "^1.0.0",
     "jquery": "^3.5.0",
     "papaparse": "^5.2.0",
+    "path": "^0.12.7",
     "progressbar.js": "^1.1.0",
-    "python-shell": "^1.0.8",
+    "simple-git": "^1.132.0",
     "system-font-css": "^2.0.2",
     "underscore": "^1.10.2"
   },
